@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,13 +21,10 @@ public class InsertPathActivity extends AppCompatActivity{
 
     @BindView(R.id.departureEdit)
     EditText departureEdit;
-
     @BindView(R.id.destinationEdit)
     EditText destinationEdit;
-
     @BindView(R.id.searchingRecyclerView)
     RecyclerView searchingRecyclerView;
-
     Context context;
 
     @Override
@@ -50,9 +48,9 @@ public class InsertPathActivity extends AppCompatActivity{
 
     @OnClick(R.id.resultBtn)
     public void onResultClick(){
-
+        Log.d("InsertPathActivity", "onResultClick() START");
         Intent intent = new Intent(context, ResultActivity.class);
         startActivity(intent);
-
+        Log.d("InsertPathActivity", "onResultClick() END");
     }
 }

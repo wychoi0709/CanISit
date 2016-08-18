@@ -20,19 +20,14 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Log.d("SplashActivity", "onCreate() START");
-
         context = this;
-
 
         //TimerTask 생성 및 Intent 생성 START
         task = new TimerTask() {
             @Override
             public void run() {
                 Intent intent;
-
-
                 intent = new Intent(context, InsertPathActivity.class);
-
                 Log.d("SplashActivity", "Next intent: " + intent);
 
                 startActivity(intent);
@@ -40,6 +35,7 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
         //TimerTask 생성 및 Intent 생성 END
+
         timer = new Timer();
         timer.schedule(task, 1000);
         Log.d("SplashActivity", "onCreate() END");
